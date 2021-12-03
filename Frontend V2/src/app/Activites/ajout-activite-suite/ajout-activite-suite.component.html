@@ -1,0 +1,76 @@
+<app-header></app-header>
+<app-side-menu></app-side-menu>
+<div class="page-wrapper">
+   
+    <div class="container-fluid">
+    <div class="row justify-content-center" style="margin: 0 auto;">
+        <!-- Mettre ici le contenu de la page -->
+        <div class="row">
+                <div class="col-md-3 col-lg-3 col-sm-3"></div>
+                <div class="col-md-6 col-lg-6 col-sm-6 white-box">
+                    <div class="col-md-6 col-lg-6 col-sm-6">
+                        <h3 class="box-title mb-0">Activité N° :  <b style="color: orange;">00{{activite.id_activite}}</b></h3>
+                        <h3 class="box-title mb-0">Libellé : <b style="color: orange;">{{activite.libelle}}</b></h3>
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-3 col-sm-3"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-lg-12 col-sm-12">
+                <div class="white-box">
+                    <div class="d-md-flex mb-3">
+                        <div class="row col-md-12 col-lg-12 col-sm-12">
+                            <div class="col-md-6 col-lg-6 col-sm-6">
+                                <a [routerLink]="['/ajout-activite-responsable', activite.id_activite]" class="btn btn-warning ">
+                                    <i class="fas fa-plus" aria-hidden="true"></i>  
+                                    <b> Affecter un nouveau responsable </b>
+                                </a>  
+                            </div>
+                            <div class="col-md-6 col-lg-6 col-sm-6">
+                                <form role="search" >
+                                    <a href="" class="active">
+                                        <i class="fa fa-search"></i>
+                                    </a>
+                                    <input type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Search..." class="form-control mt-0">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <form  #form="ngForm" (ngSubmit)="addListe(form)" novalidate>
+                        <table class="table no-wrap">
+                            <thead>
+                                <tr>
+                                    <th class="border-top-0">Nom</th>
+                                    <th class="border-top-0">Prénom</th>
+                                    <th class="border-top-0">Téléphone</th>
+                                    <th class="border-top-0">Type</th>
+                                    <th class="border-top-0">Domaine</th>
+                                    <th class="border-top-0">Etat</th>
+                                    <th class="border-top-0">
+                                        <button class="btn btn-warning" [disabled]="form.invalid"  type="submit" style="margin-left: 100px;">Affecter</button>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let respons of responsables | filter:searchText">
+                                    <td class="txt-oflo">{{respons.nom}}</td>
+                                    <td class="txt-oflo">{{respons.prenom}}</td>
+                                    <td class="txt-oflo">{{respons.telephone}}</td>
+                                    <td class="txt-oflo">{{respons.type}}</td>
+                                    <td class="txt-oflo">{{respons.domaine}}</td>
+                                    <td class="txt-oflo">{{respons.etat}}</td>
+                                    <td class="txt-oflo">
+                                        <input type="checkbox" (click)="voir(respons)"  name="affectant" style="margin-left: 30px;" ngModel>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

@@ -1,0 +1,96 @@
+<app-header></app-header>
+<app-side-menu></app-side-menu>
+<div class="page-wrapper">
+    <div class="page-breadcrumb bg-white">
+        <div class="row align-items-center sous-header">
+            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-12">
+                <h4 class="page-title">MODIFIER RESPONSABLE</h4>
+            </div>
+            <div class="col-lg-6 col-sm-8 col-md-8 col-xs-12">
+                <div class="d-md-flex"> 
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+    <div class="row justify-content-center" style="margin: 0 auto;">
+
+        <div class="col-lg-3 col-xlg-3 col-md-12"></div>
+            <!-- Column -->
+            <!-- Column -->
+            <div class="col-lg-6 col-xlg-3 col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <form class="form-horizontal form-material" (ngSubmit)="modifierResp()">
+                            <div class="form-group mb-4">
+                                <!-- <p style="color: red; text-align: center;"><b>{{erreur}}</b></p> -->
+                                <label class="col-md-12 p-0">NOM</label>
+                                <div class="col-md-12 border-bottom p-0">
+                                    <input type="text" placeholder="Saisissez votre nom de famille"
+                                    class="form-control p-0 border-0" name="nom" [(ngModel)]="respons.nom">
+                                </div>
+                            </div>
+                            <div class="form-group mb-4">
+                                <label for="example-email" class="col-md-12 p-0">PRENOM</label>
+                                <div class="col-md-12 border-bottom p-0">
+                                    <input type="text" placeholder="Saisissez votre prénom"
+                                    class="form-control p-0 border-0" name="prenom" [(ngModel)]="respons.prenom">
+                                </div>
+                            </div>
+                            <div class="form-group mb-4">
+                                <label for="example-email" class="col-md-12 p-0">TELEPHONE</label>
+                                <div class="col-md-12 border-bottom p-0">
+                                    <input type="text" placeholder=" 70 00 00 00"
+                                    class="form-control p-0 border-0" name="telephone" [(ngModel)]="respons.telephone">
+                                </div>
+                            </div>
+                            <div class="form-group mb-4">
+                                <label for="example-email" class="col-md-12 p-0">EMAIL</label>
+                                <div class="col-md-12 border-bottom p-0">
+                                    <input type="text" placeholder="exemple@gmail.com"
+                                    class="form-control p-0 border-0" name="email"
+                                    id="example-email" [(ngModel)]="respons.email">
+                                </div>
+                            </div>
+                            <div class="form-group mb-4">
+                                <label class="col-md-12 p-0">Domaine</label>
+                                <div class="col-md-12 border-bottom p-0">
+                                    <input type="text" placeholder="domaine"
+                                    class="form-control p-0 border-0" name="domaine" [(ngModel)]="respons.domaine">
+                                </div>
+                            </div>
+                            <div class="form-group mb-4">
+                                <label class="col-md-12 p-0">Type</label>
+                                <div class="col-md-12 border-bottom p-0">
+                                    <input type="text" placeholder="type"
+                                    class="form-control p-0 border-0" name="type" [(ngModel)]="respons.type">
+                                </div>
+                            </div>
+                            <div class="form-group mb-4">
+                                <label class="col-md-12 p-0">Etat</label>
+                                <div class="col-md-12 border-bottom p-0">
+                                    <input type="text" placeholder="Etat"
+                                    class="form-control p-0 border-0" name="etat" [(ngModel)]="respons.etat">
+                                </div>
+                            </div>
+                            <div class="form-group mb-4">
+                                <label class="col-md-12 p-0">Photo</label>
+                                <div class="col-md-12 border-bottom p-0">
+                                    <input type="text" placeholder="photo"
+                                    class="form-control p-0 border-0" name="type" [(ngModel)]="respons.photo">
+                                </div>
+                            </div>
+                            <div class="form-group mb-4">
+                                <div class="col-sm-12 align-button">
+                                    <button class="btn btn-warning" type="submit" >Modifier</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-xlg-3 col-md-12"></div>
+
+    </div>
+</div>
+</div>

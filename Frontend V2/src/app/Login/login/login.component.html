@@ -1,0 +1,45 @@
+<!--Login.html-->
+<div class="container-fluid">
+    <div class="row contenair">
+        <div class="col-lg-1 col-xlg-3 col-md-12"></div>
+        <div class="row col-lg-10 col-xlg-9 col-md-12 content">
+            <div class="col-lg-6 col-xl-6 col-md-12">
+                <img  alt="user" src="assets\images\img.png" width="90%"  height="110px">
+                <img  alt="user" src="assets\images\art_5GFibre.png" width="100%" height="400px" >
+            </div>
+            <div class="col-lg-6 col-xl-6 col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h1><b>Login</b></h1>
+                       <!-- #loginForm="ngForm"  (ngSubmit)="onLogin(loginForm)" -->
+                        <form #loginForm="ngForm"  (ngSubmit)="onLogin(loginForm.value)" class="form-horizontal form-material form">
+                            <div class="form-group mb-4">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <label class="p-0"> <b>Nom d'utilisateur</b> </label>
+                                <div class="col-md-12 border-bottom p-0 input"> 
+                                    <input type="text" class="form-control p-0 border-0 " name ="login" ngModel> 
+                                </div>
+                            </div>
+                            <div class="form-group mb-4">
+                                <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                <label for="example-email" class="p-0"> <b>Mot de passe</b> </label>
+                                <div class="border-bottom p-0 input">
+                                    <input type="password" class="form-control p-0 border-0" name="password" ngModel id="example-email">
+                                </div>
+                            </div>
+                            <div class="row col-lg-12 col-xlg-9 col-md-12 lien">
+                                <div class="col-lg-6 col-xl-6 col-md-12"></div>
+                                <div class="col-lg-6 col-xl-6 col-md-12"><a href="">  <b style="color: black;"> Mot de passe oublié ?</b></a></div>
+                            </div>
+                            <div class="form-group mb-4 contBtn" >
+                                <div class="col-sm-12 btn">
+                                    <button type="submit" class="btn btnC"><b>Se connecter</b>  </button>
+                                </div>
+                            </div>
+                        </form>  
+                    </div> 
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>

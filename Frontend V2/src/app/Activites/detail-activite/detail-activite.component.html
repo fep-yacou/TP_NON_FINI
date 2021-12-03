@@ -1,0 +1,117 @@
+<app-header></app-header>
+<app-side-menu></app-side-menu>
+<div class="page-wrapper">
+    <div class="page-breadcrumb bg-white">
+        <div class="row align-items-center sous-header">
+            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-12">
+                <h4 class="page-title">DETAIL ACTIVITE N° 00{{activite.id_activite}}</h4>
+            </div>
+            <div class="col-lg-6 col-sm-8 col-md-8 col-xs-12">
+                <div class="d-md-flex"></div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+    <div class="row justify-content-center" style="margin: 0 auto;">
+        <!-- Mettre ici le contenu de la page -->
+        <div class="row">
+            <div class="col-md-5 col-lg-5 col-sm-5">
+                <div class="white-box">
+                    <div class="d-md-flex mb-3">
+                        <h3 class="box-title mb-0">ACTIVITE : {{activite.libelle}}</h3>
+                        <div class="col-md-3 col-sm-4 col-xs-6 ms-auto"></div>
+                    </div>
+                    <div>
+                        <h3 class="box-title mb-0"><b class="ecrits">Exercice :</b> {{activite.exercice.annee}}</h3>
+                        <h3 class="box-title mb-0"><b class="ecrits">Durée :</b> Du {{activite.dateDebut | date: 'dd-M-Y'}} au {{activite.dateFin | date: 'dd-M-Y'}}</h3>
+                        <h3 class="box-title mb-0"><b class="ecrits">Etat :</b> {{activite.etat}}</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7 col-lg-7 col-sm-7">
+                <div class="white-box">
+                    <div class="d-md-flex mb-3">
+                        <h3 class="box-title mb-0">RESPONSABLES ASSOCIES</h3>
+                        <div class="col-md-3 col-sm-4 col-xs-6 ms-auto">
+                            <div class = "dropdown">
+                                <button class="btn btn-warning">
+                                    <i class="fas fa-plus" aria-hidden="true"></i>  
+                                    <b> Responsables </b>
+                                </button> 
+                                <div class="dropdown-content">
+                                    <a [routerLink]="['/ajout-activite-responsable', activite.id_activite]">Nouveau responsable</a>
+                                    <a [routerLink]="['/ajout-activite-suite', activite.id_activite]">Responsable existant</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table no-wrap">
+                            <thead>
+                                <tr>
+                                    <th class="border-top-0"><b>Nom</b></th>
+                                    <th class="border-top-0"><b>Prénom</b></th>
+                                    <th class="border-top-0"><b>Tél</b></th>
+                                    <th class="border-top-0"><b>Action</b></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let r of responsableParActivite">
+                                    <td class="txt-oflo">{{r.responsable.nom}}</td>
+                                    <td class="txt-oflo">{{r.responsable.prenom}}</td>
+                                    <td class="txt-oflo">{{r.responsable.telephone}}</td>
+                                    <td class="txt-oflo"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-lg-12 col-sm-12">
+                <div class="white-box">
+                    <div class="d-md-flex mb-3">
+                        <h3 class="box-title mb-0">PARTICIPANTS ASSOCIES</h3>
+                        <div class="col-md-3 col-sm-4 col-xs-6 ms-auto">
+                            <div class = "dropdown">
+                                <button class="btn btn-warning">
+                                    <i class="fas fa-plus" aria-hidden="true"></i>  
+                                    <b> Participants </b>
+                                </button> 
+                                <div class="dropdown-content">
+                                    <a [routerLink]="['/ajout-participant', activite.id_activite]">Ajout individuel</a>
+                                    <a [routerLink]="['/ajout-participant-fichier', activite.id_activite]">Ajout par fichier csv</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table no-wrap">
+                            <thead>
+                                <tr>
+                                    <th class="border-top-0"><b>Nom</b></th>
+                                    <th class="border-top-0"><b>E-mail</b></th>
+                                    <th class="border-top-0"><b>Téléphone</b></th>
+                                    <th class="border-top-0"><b>Domaine</b></th>
+                                    <th class="border-top-0"><b>Structure</b></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let p of participantParActivite">
+                                    <td class="txt-oflo">{{p.participant.nom_complet}}</td>
+                                    <td class="txt-oflo">{{p.participant.email}}</td>
+                                    <td class="txt-oflo">{{p.participant.telephone}}</td>
+                                    <td class="txt-oflo">{{p.participant.domaine}}</td>
+                                    <td class="txt-oflo">{{p.participant.structure}}</td>
+                                    <a [routerLink]="['/detail-participant', p.participant.id_participant]"><i style="color: blue;" class="fas fa-info-circle" aria-hidden="true"></i></a>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

@@ -1,0 +1,73 @@
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <aside class="left-sidebar t" >
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <hr>
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <!-- User Profile-->
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="accueil" aria-expanded="false">
+                                <i class="fa fa-home" aria-hidden="true"></i>
+                                <span class="hide-menu"><b>Accueil</b></span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item" *ngIf="adminConnect.role.libelle === 'SuperAdmin'">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="liste-admin" aria-expanded="false">
+                                <i class="fa fa-users" aria-hidden="true"></i>
+                                <span class="hide-menu"><b>Gestion Administrateurs</b></span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="liste-exercice" aria-expanded="false">
+                                <i class="fas fa-calendar-check" aria-hidden="true"></i>
+                                <span class="hide-menu"><b>Gestion Exercices</b></span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="liste-activite" aria-expanded="false">
+                                <i class="fas fa-tasks" aria-hidden="true"></i>
+                                <span class="hide-menu"><b>Gestion Activités</b></span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="liste-responsable" aria-expanded="false">
+                                <i class="fa fa-users" aria-hidden="true"></i>
+                                <span class="hide-menu"><b>Gestion Responsables</b></span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="liste-participant" aria-expanded="false">
+                                <i class="fa fa-users" aria-hidden="true"></i>
+                                <span class="hide-menu"><b>Gestion Participants</b></span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="accueil" aria-expanded="false">
+                                <i class="fas fa-chart-line" aria-hidden="true"></i>
+                                <span class="hide-menu"><b>Reporting</b></span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item" *ngIf="adminConnect.role.libelle === 'SuperAdmin'">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="liste-role" aria-expanded="false">
+                                <i class="fas fa-chess" aria-hidden="true"></i>
+                                <span class="hide-menu"><b>Rôles</b></span>
+                            </a>
+                        </li>
+                        
+                        <li class="sidebar-item" style="padding-top: 30px;">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="" aria-expanded="false">
+                                <i class="fas fa-sign-out-alt" aria-hidden="true" style="color: rgb(223, 91, 4); font-weight: bold; font-size: 25px;"></i>
+                                <span class="hide-menu" style="color: rgb(223, 91, 4); font-weight: bold;"><b>DECONNEXION</b></span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+        

@@ -1,0 +1,132 @@
+
+<app-header></app-header>
+<app-side-menu></app-side-menu>
+<div class="page-wrapper">
+    <div class="page-breadcrumb bg-white">
+        <div class="row align-items-center sous-header">
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                <h4 class="page-title">ACCUEIL</h4>
+            </div>
+            <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                <div class="d-md-flex"> 
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+
+                <!-- ============================================================== -->
+                <!-- PRODUCTS YEARLY SALES -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <div class="col-md-12 col-lg-9 col-sm-12 col-xs-12">
+                        <div class="white-box">
+                            <h3 class="box-title">Evolution du centre</h3>
+                            <div class="d-md-flex">
+                                <ul class="list-inline d-flex ms-auto">
+                                    <li class="ps-3">
+                                        <h5><i class="fa fa-circle me-1 text-info"></i>Participant</h5>
+                                    </li>
+                                    <li class="ps-3">
+                                        <h5><i class="fa fa-circle me-1 text-inverse"></i>Activité</h5>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="d-md-flex mb-3">
+                                <div class="col-md-3 col-sm-4 col-xs-6 ms-auto">
+                                    <select class="form-select shadow-none row border-top">
+                                        <option>2021</option>
+                                        <option>2020</option>
+                                        <option>2019</option>
+                                        <option>2018</option>
+                                        <option>2017</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div id="ct-visits" style="height: 405px;">
+                                <div class="chartist-tooltip" style="top: -17px; left: -12px;"><span
+                                        class="chartist-tooltip-value">6</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-12">
+                        <div class="white-box analytics-info">
+                            <h3 class="box-title">Total des Activité</h3>
+                            <ul class="list-inline two-part d-flex align-items-center mb-0">
+                                <li>
+                                    <div id="sparklinedash3"><canvas width="67" height="30"
+                                            style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas>
+                                    </div>
+                                </li>
+                                <li class="ms-auto"><span class="counter text-danger"><b>911</b></span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="white-box analytics-info">
+                            <h3 class="box-title">Total des Participant</h3>
+                            <ul class="list-inline two-part d-flex align-items-center mb-0">
+                                <li>
+                                    <div id="sparklinedash3"><canvas width="67" height="30"
+                                            style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas>
+                                    </div>
+                                </li>
+                                <li class="ms-auto"><span class="counter text-danger"><b>911</b></span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div id="piechart"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- RECENT SALES -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <div class="col-md-12 col-lg-12 col-sm-12">
+                        <div class="white-box">
+                            <div class="d-md-flex mb-3">
+                                <h3 class="box-title mb-0">Activité de l'exercice</h3>
+                                <div class="col-md-3 col-sm-4 col-xs-6 ms-auto">
+                                    
+                                        <!-- <form #e="ngForm" (ngSubmit)="getMonth(e.value)">
+            
+                                            <input type="month" name="mois" ngModel class="form-control" style="width: 50%; margin-left: 10px;">
+                                            <button type="submit">Recherche</button>
+                                      
+                                        </form> -->
+                                </div>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table no-wrap">
+                                    <thead>
+                                        <tr>
+                                            <th class="border-top-0">Libellé</th>
+                                            <th class="border-top-0">Type</th>
+                                            <th class="border-top-0">Date début</th>
+                                            <th class="border-top-0">Date fin</th>
+                                            <th class="border-top-0">Etat</th>
+                                            <th class="border-top-0">Details</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor= 'let liste of listeAct'>
+                                            <td class="txt-oflo">{{liste.libelle}}</td>
+                                            <td class="txt-oflo">{{liste.type}}</td>
+                                            <td class="txt-oflo">{{liste.dateDebut | date: 'dd-M-Y'}}</td>
+                                            <td class="txt-oflo">{{liste.dateFin | date: 'dd-M-Y'}}</td>
+                                            <td class="txt-oflo">{{liste.etat}}</td>
+                                            <td class="txt-oflo">
+                                                <a [routerLink]="['/detail-activite', liste.id_activite]"><i style="color: #03224c;" class="fas fa-info-circle" aria-hidden="true"></i></a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+</div>
+<!-- <app-footer></app-footer> -->
+</div>

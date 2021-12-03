@@ -1,0 +1,26 @@
+.t{
+    background-color: black;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    overflow-y: auto;
+}
+hr{
+    
+    color: white;
+    height: 3px;
+    background-color: white;
+    font-weight: 900px;
+}
+li:hover{
+    
+    border-bottom: 1px solid orangered;
+    padding: 5px;
+    color: orangered;
+    transition: 0.5s;
+    
+}
+li a:hover{
+    color: orangered;
+}

@@ -1,0 +1,93 @@
+<app-header></app-header>
+<app-side-menu></app-side-menu>
+<div class="page-wrapper">
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="page-breadcrumb bg-white">
+        <div class="row align-items-center">
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                <h4 class="page-title">DETAIL RESPONSABLE</h4>
+            </div>
+            <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                <div class="d-md-flex"></div>
+            </div>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Column -->
+            <div class="col-lg-4 col-xlg-3 col-md-12">
+                <div class="white-box">
+                    <div class="user-bg"> <img width="100%" alt="user" src="../../assets/plugins/images/infos.png">
+                        <div class="overlay-box">
+                            <div class="user-content">
+                                <a href="javascript:void(0)"><img src="../../assets/plugins/images/infos.png"
+                                        class="thumb-lg img-circle" alt="img"></a>
+                                <h4 class="text-white mt-2">{{respons.prenom}} {{respons.nom}}</h4>
+                                <h5 class="text-white mt-2">{{respons.email}}</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user-btm-box mt-5 d-md-flex">
+                        <div class="col-md-6 col-sm-6 text-center" style="color: orange;">
+                            <p>Ajouté(e) par :</p>
+                            <a [routerLink]="['/modifier-responsable', respons.id_responsable]" class="btn btn-orange text-white">
+                                <i class="fas fa-edit" aria-hidden="true"></i>  
+                                <b> Modifier </b>
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-sm-6 text-center">
+                            <p>Nom_admin</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Column -->
+            <!-- Column -->
+            <div class="col-lg-8 col-xlg-9 col-md-12">
+                <div class="card">
+                    <div class="card-body row">
+                        <form class="form-horizontal form-material col-lg-6">
+                            <div class="form-group mb-4">
+                                <label class="col-md-3 p-0" style="color:rgb(223,91,4)"><b>NOM</b></label>
+                                <div><b>{{respons.nom}}</b></div>
+                            </div>
+                            <div class="form-group mb-4">
+                                <label style="color:rgb(223,91,4)" class="col-md-12 p-0"><b>PRENOM</b></label>
+                                <div><b>{{respons.prenom}}</b></div>
+                            </div>
+                            <div class="form-group mb-4">
+                                <label style="color:rgb(223,91,4)" class="col-md-12 p-0"><b>TELEPHONE</b></label>
+                                <div><b>{{respons.telephone}}</b></div>
+                            </div>
+                            <div class="form-group mb-4">
+                                <label style="color:rgb(223,91,4)" class="col-md-12 p-0"><b>EMAIL</b></label>
+                                <div><b>{{respons.email}}</b></div>
+                            </div>
+                        </form>
+                        <form class="form-horizontal form-material row col-lg-6">
+                            
+                            <div class="form-group mb-4">
+                                <label style="color:rgb(223,91,4)" class="col-md-12 p-0"><b>DOMAINE</b></label>
+                                <div><b>{{respons.domaine}}</b></div>
+                            </div>
+                            <div class="form-group mb-4">
+                                <label style="color:rgb(223,91,4)" class="col-md-12 p-0"><b>TYPE</b></label>
+                                <div><b>{{respons.type}}</b></div>
+                            </div>
+                            <div class="form-group mb-4">
+                                <label style="color:rgb(223,91,4)" class="col-md-12 p-0"><b>ETAT</b></label>
+                                <div><b>{{respons.etat}}</b></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- Column -->
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,49 @@
+<app-header></app-header>
+<app-side-menu></app-side-menu>
+<div class="page-wrapper">
+    <div class="page-breadcrumb bg-white">
+        <div class="row align-items-center sous-header">
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                <h4 class="page-title">Détail Participation</h4>
+            </div>
+
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-8 col-xlg-9 col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <form class="form-horizontal form-material">
+                            <div class="form-group mb-4">
+                                <label class="col-md-12 p-0" style="color: orange;">Nom Complet</label>
+                                <div class="col-md-12 border-bottom p-0" >{{participant.nom_complet}}</div>
+                            </div>
+                            <div class="form-group mb-4">
+                                <label class="col-md-12 p-0" style="color: orange;">Téléphone</label>
+                                <div class="col-md-12 border-bottom p-0">{{participant.telephone}}</div>
+                            </div>
+                            <div class="form-group mb-4">
+                                <label class="col-md-12 p-0" style="color: orange;">Domaine</label>
+                                <div class="col-md-12 border-bottom p-0">{{participant.domaine}}</div>
+                            </div>
+                            <div class="form-group mb-4">
+                                <label class="col-md-12 p-0" style="color: orange;">Structure</label>
+                                <div class="col-md-12 border-bottom p-0">{{participant.structure}}</div>
+                            </div>
+                            <div class="form-group mb-4">
+                                <label for="example-email" class="col-md-12 p-0" style="color: orange;">Email</label>
+                                <div class="col-md-12 border-bottom p-0">
+                                    {{participant.email}}
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

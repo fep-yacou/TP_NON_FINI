@@ -1,0 +1,91 @@
+<app-header></app-header>
+<app-side-menu></app-side-menu>
+<div class="page-wrapper">
+    <div class="page-breadcrumb bg-white">
+        <div class="row align-items-center sous-header">
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                <h4 class="page-title">Ajout Participants</h4>
+            </div>
+            <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                <div class="d-md-flex"></div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 col-lg-3 col-sm-3"></div>
+            <div class="col-md-6 col-lg-6 col-sm-6 white-box">
+                <div class="col-md-6 col-lg-6 col-sm-6">
+                    <h3 class="box-title mb-0">Activité N° :  <b style="color: orange;">00{{activite.id_activite}}</b></h3>
+                    <h3 class="box-title mb-0">Libellé : <b style="color: orange;">{{activite.libelle}}</b></h3>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3 col-sm-3"></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-xlg-3 col-md-12"></div>
+            <div class="col-lg-6 col-xlg-3 col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <form class="form-horizontal form-material" #registerForm="ngForm"  (ngSubmit)="onRegister(registerForm)">
+                            <div class="form-group mb-4">
+                                <label class="col-md-12 p-0">Nom complet</label>
+                                <div class="col-md-12 border-bottom p-0">
+                                    <input type="text" placeholder=""
+                                                class="form-control p-0 border-0" name="nom_complet" ngModel>
+                                </div>
+                            </div>
+                            <div class="form-group mb-4">
+                                <label for="example-email" class="col-md-12 p-0">Genre</label>
+                                <div class="col-md-12 border-bottom p-0">
+                                    <select class="form-control p-0 border-0" name="participantGenre" ngModel>
+                                        <option value="">---sélectionnez le genre---</option>
+                                        <option value="Femme">Femme</option>
+                                        <option value="Homme">Homme</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group mb-4">
+                                <label for="example-email" class="col-md-12 p-0">Téléphone</label>
+                                <div class="col-md-12 border-bottom p-0">
+                                    <input type="text" placeholder=""
+                                    class="form-control p-0 border-0" name="telephone" ngModel>
+                                </div>
+                            </div>
+                            <div class="form-group mb-4">
+                                <label for="example-email" class="col-md-12 p-0">Domaine</label>
+                                <div class="col-md-12 border-bottom p-0">
+                                    <input type="text" placeholder=""
+                                    class="form-control p-0 border-0" name="domaine" ngModel>
+                                </div>
+                            </div>
+                            <div class="form-group mb-4">
+                                <label for="example-email" class="col-md-12 p-0">EMAIL</label>
+                                <div class="col-md-12 border-bottom p-0">
+                                    <input type="email" placeholder="" required="required"
+                                    class="form-control p-0 border-0" name="email"
+                                    id="example-email" ngModel>
+                                </div>
+                            </div>
+
+                            <div class="form-group mb-4">
+                              <label for="example-email" class="col-md-12 p-0">Structure</label>
+                              <div class="col-md-12 border-bottom p-0">
+                                  <input type="text" placeholder=""
+                                  class="form-control p-0 border-0" name="structure"
+                                  id="example-email" ngModel>
+                              </div>
+                          </div>
+                            <div class="form-group mb-4">
+                                <div class="col-sm-12">
+                                    <button class="btn btn-warning" type="submit">Ajouter</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-xlg-3 col-md-12"></div>
+        </div>
+    </div>
+</div>

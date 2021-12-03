@@ -1,0 +1,33 @@
+.sous-header{
+    padding-top: 20px;
+}
+
+.btn-orange{
+    background-color: #FF9900;
+    color: white;
+}
+
+.alignement a{
+    margin: 5px;
+}
+form{
+    display: flex;
+    justify-content: space-between;
+    
+}
+form input {
+    width: 200px;
+    border-radius: 20px;
+    -webkit-transition: width 0.6s ease-in-out;
+    transition: width 0.6s ease-in-out;
+  }
+  
+  /* When the input field gets focus, change its width to 100% */
+  input[type=text]:focus {
+    width: 100%;
+  }
+  .active{
+      position: relative;
+      left: 92%;
+      top: 7px;
+  }

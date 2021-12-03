@@ -1,0 +1,86 @@
+<app-header></app-header>
+<app-side-menu></app-side-menu>
+<div class="page-wrapper">
+    <div class="page-breadcrumb bg-white">
+        <div class="row align-items-center sous-header">
+            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-12">
+                <h4 class="page-title">DETAIL EXERCICE</h4>
+            </div>
+            <div class="col-lg-6 col-sm-8 col-md-8 col-xs-12">
+                <div class="d-md-flex"></div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+    <div class="row justify-content-center" style="margin: 0 auto;">
+        <!-- Mettre ici le contenu de la page -->
+        <div class="row">
+            <div class="col-md-12 col-lg-12 col-sm-12">
+                <div class="white-box">
+                    <div class="d-md-flex mb-3">
+                        <h3 class="box-title mb-0">Exercice N° 00{{exo.id}}</h3>
+                        <div class="col-md-3 col-sm-4 col-xs-6 ms-auto"></div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table no-wrap">
+                            <thead>
+                                <tr>
+                                    <th class="border-top-0"><b>Année</b></th>
+                                    <th class="border-top-0"><b>Date Début</b></th>
+                                    <th class="border-top-0"><b>Date Fin</b></th>
+                                    <th class="border-top-0"><b>Etat</b></th>
+                                    <th class="border-top-0"><b>Statut</b></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="txt-oflo">{{exo.annee}}</td>
+                                    <td class="txt-oflo">{{exo.date_debut | date: 'dd-M-Y'}}</td>
+                                    <td class="txt-oflo">{{exo.date_fin | date: 'dd-M-Y'}}</td>
+                                    <td class="txt-oflo">{{exo.etat}}</td>
+                                    <td class="txt-oflo">{{exo.statut}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-lg-12 col-sm-12">
+                <div class="white-box">
+                    <div class="d-md-flex mb-3">
+                        <h3 class="box-title mb-0">Activités associées à l'exercice N° 00{{exo.id}}</h3>
+                        <div class="col-md-3 col-sm-4 col-xs-6 ms-auto"></div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table no-wrap">
+                            <thead>
+                                <tr>
+                                    <th class="border-top-0"><b>Libellé</b></th>
+                                    <th class="border-top-0"><b>Type</b></th>
+                                    <th class="border-top-0"><b>Date début</b></th>
+                                    <th class="border-top-0"><b>Date fin</b></th>
+                                    <th class="border-top-0"><b>Etat</b></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let act of exerciceActivite">
+                                    <td class="txt-oflo">{{act.libelle}}</td>
+                                    <td class="txt-oflo">{{act.type}}</td>
+                                    <td class="txt-oflo">{{act.dateDebut | date: 'dd-M-Y'}}</td>
+                                    <td class="txt-oflo">{{act.dateFin | date: 'dd-M-Y'}}</td>
+                                    <td class="txt-oflo">{{act.etat}}</td>
+                                    <td class="txt-oflo">
+                                        <a [routerLink]="['/detail-activite', act.id_activite]"><i style="color: #03224c;" class="fas fa-info-circle" aria-hidden="true"></i></a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

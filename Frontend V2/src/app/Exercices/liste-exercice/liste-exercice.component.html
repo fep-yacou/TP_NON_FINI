@@ -1,0 +1,79 @@
+<app-header></app-header>
+<app-side-menu></app-side-menu>
+<div class="page-wrapper">
+    <div class="page-breadcrumb bg-white">
+        <div class="row align-items-center sous-header">
+            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-12">
+                <h4 class="page-title">GESTION EXERCICES</h4>
+            </div>
+            <div class="col-lg-6 col-sm-8 col-md-8 col-xs-12">
+                <div class="d-md-flex"> 
+                    <ol class="breadcrumb ms-auto">
+                        <li> <a href="ajout-exercice" class="btn btn-orange ">
+                            <i class="fas fa-plus" aria-hidden="true"></i>
+                            <b> Ajouter un exercice </b>
+                        </a></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+    <div class="row justify-content-center" style="margin: 0 auto;">
+        <!-- Mettre ici le contenu de la page -->
+        <div class="row">
+            <div class="col-md-12 col-lg-12 col-sm-12">
+                <div class="white-box">
+                    <div class="d-md-flex mb-3">
+                        <div class="row col-md-12 col-lg-12 col-sm-12">
+                            <div class="col-md-6 col-lg-6 col-sm-6">
+                                <h3 class="box-title mb-0">Liste des exercices</h3>
+                            </div>
+                            <div class="col-md-6 col-lg-6 col-sm-6">
+                                <form role="search" >
+                                    <a href="" class="active">
+                                        <i class="fa fa-search"></i>
+                                    </a>
+                                    <input type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Search..." class="form-control mt-0">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table no-wrap">
+                            <thead>
+                                <tr>
+                                    <th class="border-top-0"><b>#</b></th>
+                                    <th class="border-top-0"><b>Année</b></th>
+                                    <th class="border-top-0"><b>Date Début</b></th>
+                                    <th class="border-top-0"><b>Date Fin</b></th>
+                                    <th class="border-top-0"><b>Etat</b></th>
+                                    <th class="border-top-0"><b>Statut</b></th>
+                                    <th class="border-top-0"><b>Action</b></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let liste of listeExo | filter:searchText">
+                                    <td class="txt-oflo">{{liste.id}}</td>
+                                    <td class="txt-oflo">{{liste.annee}}</td>
+                                    <td class="txt-oflo">{{liste.date_debut | date: 'dd-M-Y'}}</td>
+                                    <td class="txt-oflo">{{liste.date_fin | date: 'dd-M-Y'}}</td>
+                                    <td class="txt-oflo">{{liste.etat}}</td>
+                                    <td class="txt-oflo">{{liste.statut}}</td>
+                                    <td>
+                                        <span class="text-success alignement">
+                                            <a [routerLink]="['/modifier-exercice', liste.id]"> <i class="fa fa-edit" aria-hidden="true"></i></a>
+                                            <a (click)="deleteExercice(liste.id)"><i style="color: red;" class="fa fa-trash" aria-hidden="true" onclick ="return(confirm('Etes-vous certain de vouloir supprimer cet apprenant ?'));"></i></a>
+                                            <a [routerLink]="['/detail-exercice', liste.id]"><i style="color: #03224c;" class="fas fa-info-circle" aria-hidden="true"></i></a>
+                                        </span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

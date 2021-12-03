@@ -1,0 +1,72 @@
+<app-header></app-header>
+<app-side-menu></app-side-menu>
+<div class="page-wrapper">
+    <div class="page-breadcrumb bg-white">
+        <div class="row align-items-center sous-header">
+            <div class="col-lg-6 col-md-4 col-sm-4 col-xs-12">
+                <h4 class="page-title">MODIFICATION PARTICIPANT</h4>
+            </div>
+            <div class="col-lg-6 col-sm-8 col-md-8 col-xs-12">
+                <div class="d-md-flex"></div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3 col-xlg-3 col-md-12"></div>
+            <div class="col-lg-6 col-xlg-3 col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <form class="form-horizontal form-material"  (ngSubmit)="onUpdate()" novalidate>
+                            <div class="form-group mb-4">
+                                <label class="col-md-12 p-0">Nom Complet</label>
+                                <div class="col-md-12 border-bottom p-0">
+                                    <input type="text" placeholder=""
+                                        class="form-control p-0 border-0" name="nom_complet" [(ngModel)]= "participant.nom_complet" required pattern="[a-zA-Z]+" #nom="ngModel">
+                                </div>
+
+                            </div>
+                            <div class="form-group mb-4">
+                                <label for="example-email" class="col-md-12 p-0">Téléphone</label>
+                                <div class="col-md-12 border-bottom p-0">
+                                    <input type="text" placeholder=""
+                                    class="form-control p-0 border-0" name="telephone" ngModel  [(ngModel)]="participant.telephone">
+                                </div>
+                            </div>
+                            <div class="form-group mb-4">
+                                <label for="example-email" class="col-md-12 p-0">Domaine</label>
+                                <div class="col-md-12 border-bottom p-0">
+                                    <input type="text" placeholder=""
+                                    class="form-control p-0 border-0" name="domaine"  [(ngModel)]="participant.domaine">
+                                </div>
+                            </div>
+                            <div class="form-group mb-4">
+                                <label for="example-email" class="col-md-12 p-0">Structure</label>
+                                <div class="col-md-12 border-bottom p-0">
+                                    <input type="text" placeholder=""
+                                    class="form-control p-0 border-0" name="structure"
+                                    id="example-email"  [(ngModel)]="participant.structure">
+                                </div>
+                            </div>
+
+                            <div class="form-group mb-4">
+                                <label class="col-md-12 p-0">Email</label>
+                                <div class="col-md-12 border-bottom p-0">
+                                    <input type="email" placeholder=""
+                                    class="form-control p-0 border-0" name="email"  [(ngModel)]="participant.email">
+                                </div>
+                            </div>
+                            <div class="form-group mb-4">
+                                <div class="col-sm-12">
+                                    <button class="btn btn-warning" type="submit">Modifier</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-xlg-3 col-md-12"></div>
+        </div>
+    </div>
+</div>
+
